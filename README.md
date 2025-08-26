@@ -38,7 +38,7 @@ This project is built using **HTML, CSS, and JavaScript**, focusing on a clean a
 1. **Clone the repository**
    ```bash
    git clone https://github.com/sahityasundara/DormEase-project.git
-````
+   ````
 
 2. **Navigate to the folder**
 
