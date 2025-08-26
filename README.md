@@ -43,9 +43,9 @@ This project is built using **HTML, CSS, and JavaScript**, focusing on a clean a
 2. **Navigate to the folder**
 
    ```bash
-   cd dormease-frontend
+   cd DormEase-project
    ```
-3. **Open `index.html` in your browser**
+3. **Open `py4.html` in your browser**
 
 ---
 
@@ -59,10 +59,11 @@ This project is built using **HTML, CSS, and JavaScript**, focusing on a clean a
 
 ## 👨‍💻 Author
 
-**Sundara Naga Durga Sahithya**
-📧 \sahityasundara@gmail.com
-🔗 [LinkedIn Profile](https://www.linkedin.com/in/sahitya-sundara-2822b4259/)
+**Sundara Naga Durga Sahithya**  
+📧 sahityasundara@gmail.com  
+🔗 [LinkedIn Profile](https://www.linkedin.com/in/sahitya-sundara-2822b4259/)  
 🔗 [GitHub Profile](https://github.com/sahityasundara)
+
 
 ---
 
