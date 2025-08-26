@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DormEase | Email Verification</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+<style>
+    :root {
+        --primary-dark: #1e3a5f;
+        --accent: #5a2bbf;
+        --light-bg: rgba(255, 255, 255, 0.2);
+        --shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: 'Poppins', sans-serif;
+        background: linear-gradient(135deg, #f3f4fa, #132966);
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+    }
+
+    .form-container {
+        background: var(--light-bg);
+        backdrop-filter: blur(10px);
+        padding: 30px 25px;
+        border-radius: 15px;
+        box-shadow: var(--shadow);
+        width: 100%;
+        max-width: 380px;
+        text-align: center;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        animation: fadeIn 0.6s ease;
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    h2 {
+        font-size: 26px;
+        color: var(--primary-dark);
+        margin-bottom: 15px;
+    }
+
+    label {
+        display: block;
+        text-align: left;
+        font-weight: 600;
+        margin-bottom: 8px;
+        color: var(--primary-dark);
+    }
+
+    input[type="email"] {
+        width: 100%;
+        padding: 12px;
+        margin-bottom: 18px;
+        border: 1.5px solid #ddd;
+        border-radius: 10px;
+        font-size: 14px;
+        background: rgba(255, 255, 255, 0.9);
+        outline: none;
+        transition: all 0.3s ease;
+    }
+
+    input[type="email"]:focus {
+        border-color: var(--primary-dark);
+        box-shadow: 0 0 8px rgba(30, 58, 95, 0.3);
+        transform: scale(1.02);
+    }
+
+    input[type="submit"] {
+        width: 100%;
+        padding: 14px;
+        background: var(--primary-dark);
+        color: #fff;
+        font-size: 16px;
+        font-weight: 600;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: background 0.3s, transform 0.2s ease;
+    }
+
+    input[type="submit"]:hover {
+        background: var(--accent);
+        transform: scale(1.05);
+    }
+
+    footer {
+        margin-top: 15px;
+        font-size: 13px;
+        color: #333;
+        opacity: 0.8;
+    }
+</style>
+</head>
+<body>
+
+<div class="form-container">
+    <h2>Email Verification</h2>
+    <form action="new.html" method="post">
+        <label for="email">Enter your email</label>
+        <input type="email" id="email" name="email" required>
+        <input type="submit" value="Submit">
+    </form>
+    <footer>&copy; 2024 DormEase | Secure Verification</footer>
+</div>
+
+</body>
+</html>

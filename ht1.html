@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DormEase | Hostel Companion</title>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Segoe UI', Tahoma, sans-serif;
+    }
+
+    body {
+        background: url('https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat fixed;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        position: relative;
+        color: #333;
+        transition: background 0.4s ease;
+    }
+
+    .overlay {
+        position: absolute;
+        top: 0; left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(255, 255, 255, 0.4);
+        backdrop-filter: blur(4px);
+        z-index: -1;
+    }
+
+    header {
+        background: rgba(255, 255, 255, 0.65);
+        padding: 25px 50px;
+        border-radius: 16px;
+        backdrop-filter: blur(12px);
+        box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+        margin-bottom: 30px;
+        animation: fadeIn 1.5s ease;
+    }
+
+    header h1 {
+        font-size: 3rem;
+        font-weight: 700;
+        color: #1e3a5f;
+        margin-bottom: 10px;
+    }
+
+    header p {
+        font-size: 1.2rem;
+        color: #555;
+        margin-bottom: 15px;
+    }
+
+    .mode-toggle {
+        background: #1e3a5f;
+        color: #fff;
+        border: none;
+        padding: 12px 20px;
+        border-radius: 8px;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: 0.3s;
+        font-weight: 600;
+    }
+
+    .mode-toggle:hover {
+        background: #2e4f77;
+    }
+
+    nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+        background: rgba(255, 255, 255, 0.65);
+        padding: 25px;
+        border-radius: 16px;
+        backdrop-filter: blur(12px);
+        box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+        animation: slideUp 2s ease;
+        max-width: 900px;
+        width: 100%;
+    }
+
+    nav a {
+        text-decoration: none;
+        color: #1e3a5f;
+        font-size: 1.1rem;
+        font-weight: 600;
+        padding: 12px 22px;
+        border: 1px solid #1e3a5f;
+        border-radius: 8px;
+        transition: all 0.3s ease;
+    }
+
+    nav a:hover {
+        background: #1e3a5f;
+        color: #fff;
+        transform: translateY(-3px);
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(-20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes slideUp {
+        from { opacity: 0; transform: translateY(40px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Dark Mode */
+    .dark-mode {
+        color: #f4f4f4;
+        background: #1a1a1a;
+    }
+
+    .dark-mode .overlay {
+        background: rgba(0, 0, 0, 0.6);
+    }
+
+    .dark-mode header {
+        background: rgba(34, 34, 34, 0.7);
+    }
+
+    .dark-mode header h1 {
+        color: #eaeaea;
+    }
+
+    .dark-mode header p {
+        color: #ccc;
+    }
+
+    .dark-mode nav {
+        background: rgba(34, 34, 34, 0.7);
+    }
+
+    .dark-mode nav a {
+        color: #fff;
+        border-color: #ccc;
+    }
+
+    .dark-mode nav a:hover {
+        background: #fff;
+        color: #111;
+    }
+
+    @media screen and (max-width: 768px) {
+        header h1 {
+            font-size: 2.2rem;
+        }
+        nav {
+            flex-direction: column;
+            gap: 15px;
+        }
+    }
+</style>
+</head>
+<body>
+<div class="overlay"></div>
+
+<header>
+    <h1>DORMEASE</h1>
+    <p>Your all-in-one hostel companion for bookings, timings & services</p>
+    <button class="mode-toggle" onclick="toggleMode()">🌙 Dark Mode</button>
+</header>
+
+<nav>
+    <a href="example1.html">Room Booking</a>
+    <a href="image1.html">Mess Timings</a>
+    <a href="img2.html">Mess Menu</a>
+    <a href="img1.html">Laundry Timings</a>
+    <a href="gym.html">Gym Timings</a>
+    <a href="templetimings.png">Temple Timings</a>
+    <a href="compl.html">Complaint Box</a>
+</nav>
+
+<script>
+    function toggleMode() {
+        document.body.classList.toggle("dark-mode");
+        const btn = document.querySelector('.mode-toggle');
+        btn.textContent = document.body.classList.contains("dark-mode") ? "☀️ Light Mode" : "🌙 Dark Mode";
+    }
+</script>
+
+</body>
+</html>

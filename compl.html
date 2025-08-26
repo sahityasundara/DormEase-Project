@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>DormEase | Complaint Box</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+<style>
+    :root {
+        --primary: #020b29;
+        --primary-dark: #030118;
+        --bg: #f9f9f9;
+        --card-bg: #fff;
+        --text-dark: #333;
+        --text-light: #666;
+        --success: #28a745;
+        --error: #dc3545;
+        --shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: 'Poppins', sans-serif;
+        background: linear-gradient(135deg, var(--primary), #f5f4f8);
+        color: var(--text-dark);
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+    }
+
+    .container {
+        width: 100%;
+        max-width: 450px;
+        background: var(--card-bg);
+        padding: 25px 30px;
+        border-radius: 15px;
+        box-shadow: var(--shadow);
+        animation: fadeIn 0.7s ease;
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    h2 {
+        text-align: center;
+        margin-bottom: 18px;
+        color: var(--primary-dark);
+        font-size: 26px;
+    }
+
+    label {
+        font-weight: 600;
+        display: block;
+        margin-bottom: 8px;
+        font-size: 14px;
+    }
+
+    textarea {
+        width: 100%;
+        height: 130px;
+        padding: 12px;
+        font-size: 14px;
+        border: 1.5px solid #ddd;
+        border-radius: 8px;
+        resize: none;
+        transition: border-color 0.3s, box-shadow 0.3s;
+    }
+
+    textarea:focus {
+        border-color: var(--primary);
+        outline: none;
+        box-shadow: 0 0 6px rgba(108, 99, 255, 0.3);
+    }
+
+    button {
+        width: 100%;
+        padding: 14px;
+        background: var(--primary);
+        color: #fff;
+        font-weight: 600;
+        font-size: 16px;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        margin-top: 15px;
+        transition: background 0.3s ease;
+    }
+
+    button:hover {
+        background: var(--primary-dark);
+    }
+
+    .message {
+        text-align: center;
+        margin-top: 15px;
+        font-size: 14px;
+        display: none;
+        padding: 10px;
+        border-radius: 6px;
+    }
+
+    .message.success {
+        background-color: rgba(40, 167, 69, 0.1);
+        color: var(--success);
+    }
+
+    .message.error {
+        background-color: rgba(220, 53, 69, 0.1);
+        color: var(--error);
+    }
+
+    /* Mobile responsiveness */
+    @media (max-width: 500px) {
+        .container {
+            padding: 20px;
+        }
+        h2 {
+            font-size: 22px;
+        }
+    }
+</style>
+</head>
+<body>
+    <div class="container">
+        <h2>Complaint Box</h2>
+        <form id="complaintForm">
+            <label for="complaint">Your Complaint</label>
+            <textarea id="complaint" name="complaint" placeholder="Type your issue here..." required></textarea>
+            <button type="submit">Submit Complaint</button>
+        </form>
+        <div class="message success" id="successMsg">✅ Your complaint has been submitted successfully!</div>
+        <div class="message error" id="errorMsg">❌ Please enter a valid complaint before submitting.</div>
+    </div>
+
+    <script>
+        const form = document.getElementById('complaintForm');
+        const successMsg = document.getElementById('successMsg');
+        const errorMsg = document.getElementById('errorMsg');
+
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const complaint = document.getElementById('complaint').value.trim();
+
+            if (complaint.length > 5) {
+                successMsg.style.display = 'block';
+                errorMsg.style.display = 'none';
+                form.reset();
+                setTimeout(() => successMsg.style.display = 'none', 3000);
+            } else {
+                errorMsg.style.display = 'block';
+                successMsg.style.display = 'none';
+                setTimeout(() => errorMsg.style.display = 'none', 3000);
+            }
+        });
+    </script>
+</body>
+</html>
