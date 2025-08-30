@@ -10,7 +10,10 @@
         background: #f5f6fa;
         margin: 0;
         padding: 0;
-        text-align: center;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
     header {
@@ -20,11 +23,14 @@
         font-size: 22px;
         font-weight: bold;
         text-transform: uppercase;
+        width: 100%;
         position: relative;
+        text-align: center;
     }
 
     nav {
         margin: 15px 0;
+        text-align: center;
     }
 
     nav a {
@@ -40,27 +46,39 @@
         text-decoration: underline;
     }
 
+    .content-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        width: 100%;
+        padding-top: 40px; /* moves content slightly below header */
+        flex: 1;
+    }
+
     h2 {
         color: #1e3a5f;
-        margin: 20px 0;
+        margin-bottom: 20px;
+        font-size: 28px;
+        text-align: center;
     }
 
     table {
         width: 85%;
-        max-width: 700px;
-        margin: 0 auto 20px auto;
+        max-width: 900px;
         border-collapse: collapse;
         background: white;
         border-radius: 10px;
         overflow: hidden;
         box-shadow: 0 6px 14px rgba(0, 0, 0, 0.1);
+        font-size: 16px;
     }
 
     th, td {
         padding: 12px 15px;
         text-align: center;
         border-bottom: 1px solid #ddd;
-        font-size: 16px;
+        white-space: nowrap;
     }
 
     th {
@@ -77,36 +95,36 @@
     tr:hover {
         background-color: #f1f1f1;
     }
-footer {
-    background: #1e3a5f;
-    color: white;
-    text-align: center;
-    padding: 10px 0;
-    font-size: 14px;
 
-    position: fixed;    /* Fixes footer at bottom */
-    bottom: 0;          /* Bottom of viewport */
-    left: 0;            /* Full width */
-    width: 100%;
-    z-index: 1000;      /* Stays on top */
-}
+    footer {
+        background: #1e3a5f;
+        color: white;
+        text-align: center;
+        padding: 10px 0;
+        font-size: 14px;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
+    }
 
-      .logout-btn {
-    position: absolute;
-    right: 20px;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: #ff4b5c;
-    color: white;
-    text-decoration: none;
-    padding: 8px 16px;
-    font-size: 14px;
-    border-radius: 5px;
-}
+    .logout-btn {
+        position: absolute;
+        right: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: #ff4b5c;
+        color: white;
+        text-decoration: none;
+        padding: 8px 16px;
+        font-size: 14px;
+        border-radius: 5px;
+    }
 
-.logout-btn:hover {
-    background-color: #e04352;
-}
+    .logout-btn:hover {
+        background-color: #e04352;
+    }
 </style>
 </head>
 <body>
@@ -116,9 +134,8 @@ footer {
     <a href="py4.html" class="logout-btn">Logout</a>
 </header>
 
-
 <nav>
-  <a href="ht1.html">Home</a>
+    <a href="ht1.html">Home</a>
     <a href="example1.html">Room Booking</a>
     <a href="img2.html">Mess Menu</a>
     <a href="img1.html">Laundry Timings</a>
@@ -128,36 +145,37 @@ footer {
     <a href="contact.html">Contact</a>
 </nav>
 
-<h2>Mess Timings</h2>
+<div class="content-container">
+    <h2>Mess Timings</h2>
 
-<table>
-  <thead>
-    <tr>
-      <th style="width:20%;">Day</th>
-      <th style="width:20%;">Breakfast</th>
-      <th style="width:20%;">Lunch</th>
-      <th style="width:20%;">Tea</th>
-      <th style="width:20%;">Dinner</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="white-space: nowrap;">Monday - Saturday</td>
-      <td style="white-space: nowrap;">7:30 AM - 9:30 AM</td>
-      <td style="white-space: nowrap;">12:00 PM - 1:30 PM</td>
-      <td style="white-space: nowrap;">4:30 PM - 6:00 PM</td>
-      <td style="white-space: nowrap;">7:30 PM - 9:00 PM</td>
-    </tr>
-    <tr>
-      <td style="white-space: nowrap;">Sunday & Holidays</td>
-      <td style="white-space: nowrap;">7:30 AM - 9:30 AM</td>
-      <td style="white-space: nowrap;">12:30 PM - 2:00 PM</td>
-      <td style="white-space: nowrap;">4:30 PM - 6:00 PM</td>
-      <td style="white-space: nowrap;">7:30 PM - 9:00 PM</td>
-    </tr>
-  </tbody>
-</table>
-
+    <table>
+        <thead>
+            <tr>
+                <th style="width:20%;">Day</th>
+                <th style="width:20%;">Breakfast</th>
+                <th style="width:20%;">Lunch</th>
+                <th style="width:20%;">Tea</th>
+                <th style="width:20%;">Dinner</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Monday - Saturday</td>
+                <td>7:30 AM - 9:30 AM</td>
+                <td>12:00 PM - 1:30 PM</td>
+                <td>4:30 PM - 6:00 PM</td>
+                <td>7:30 PM - 9:00 PM</td>
+            </tr>
+            <tr>
+                <td>Sunday & Holidays</td>
+                <td>7:30 AM - 9:30 AM</td>
+                <td>12:30 PM - 2:00 PM</td>
+                <td>4:30 PM - 6:00 PM</td>
+                <td>7:30 PM - 9:00 PM</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
 
 <footer>&copy; 2024 DormEase | Hostel Mess Service</footer>
 

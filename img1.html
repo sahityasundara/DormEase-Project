@@ -10,7 +10,10 @@
         background: #f5f6fa;
         margin: 0;
         padding: 0;
-        text-align: center;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
     header {
@@ -20,11 +23,14 @@
         font-size: 22px;
         font-weight: bold;
         text-transform: uppercase;
+        width: 100%;
         position: relative;
+        text-align: center;
     }
 
     nav {
         margin: 15px 0;
+        text-align: center;
     }
 
     nav a {
@@ -40,15 +46,27 @@
         text-decoration: underline;
     }
 
+    /* Center container, slightly higher vertically */
+    .content-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start; /* top alignment inside this space */
+        flex: 1;
+        padding-top: 40px; /* pushes content slightly down from header */
+        width: 100%;
+    }
+
     h2 {
         color: #1e3a5f;
-        margin: 20px 0;
+        margin-bottom: 20px;
+        font-size: 28px;
+        text-align: center;
     }
 
     table {
         width: 85%;
         max-width: 700px;
-        margin: 0 auto 20px auto;
         border-collapse: collapse;
         background: white;
         border-radius: 10px;
@@ -80,14 +98,13 @@
         text-align: left;
     }
 
-    /* Make cells wider */
     th:first-child, td:first-child {
-        width: 35%;  /* Category column */
+        width: 35%;
         white-space: nowrap;
     }
 
     th:last-child, td:last-child {
-        width: 65%;  /* Details column */
+        width: 65%;
         white-space: nowrap;
     }
 
@@ -140,39 +157,41 @@
   <a href="contact.html">Contact</a>
 </nav>
 
-<h2>Laundry Timings</h2>
+<div class="content-container">
+    <h2>Laundry Timings</h2>
 
-<table>
-  <thead>
-    <tr>
-      <th>Category</th>
-      <th>Details</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Laundry Room Location</td>
-      <td>The laundry room is located on the ground floor of the main hostel building, next to the common area.</td>
-    </tr>
-    <tr>
-      <td>Operating Hours (Mon - Fri)</td>
-      <td>8:00 AM - 10:00 PM</td>
-    </tr>
-    <tr>
-      <td>Operating Hours (Sat & Sun)</td>
-      <td>9:00 AM - 11:00 PM</td>
-    </tr>
-    <tr>
-      <td>Machine Availability</td>
-      <td>
-        <ul>
-          <li>3 Washing Machines</li>
-          <li>3 Dryers</li>
-        </ul>
-      </td>
-    </tr>
-  </tbody>
-</table>
+    <table>
+      <thead>
+        <tr>
+          <th>Category</th>
+          <th>Details</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Laundry Room Location</td>
+          <td>The laundry room is located on the ground floor of the main hostel building, next to the common area.</td>
+        </tr>
+        <tr>
+          <td>Operating Hours (Mon - Fri)</td>
+          <td>8:00 AM - 10:00 PM</td>
+        </tr>
+        <tr>
+          <td>Operating Hours (Sat & Sun)</td>
+          <td>9:00 AM - 11:00 PM</td>
+        </tr>
+        <tr>
+          <td>Machine Availability</td>
+          <td>
+            <ul>
+              <li>3 Washing Machines</li>
+              <li>3 Dryers</li>
+            </ul>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+</div>
 
 <footer>&copy; 2024 DormEase | Laundry Service</footer>
 

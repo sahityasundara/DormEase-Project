@@ -10,7 +10,10 @@
         background: #f5f6fa;
         margin: 0;
         padding: 0;
-        text-align: center;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
     header {
@@ -20,11 +23,14 @@
         font-size: 22px;
         font-weight: bold;
         text-transform: uppercase;
+        width: 100%;
         position: relative;
+        text-align: center;
     }
 
     nav {
         margin: 15px 0;
+        text-align: center;
     }
 
     nav a {
@@ -40,27 +46,39 @@
         text-decoration: underline;
     }
 
+    /* Center container, slightly higher vertically */
+    .content-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        flex: 1;
+        padding-top: 40px; /* pushes content slightly down from header */
+        width: 100%;
+    }
+
     h2 {
         color: #1e3a5f;
-        margin: 20px 0;
+        margin-bottom: 20px;
+        font-size: 28px;
+        text-align: center;
     }
 
     table {
         width: 85%;
-        max-width: 700px;
-        margin: 0 auto 20px auto;
+        max-width: 900px;
         border-collapse: collapse;
         background: white;
         border-radius: 10px;
         overflow: hidden;
         box-shadow: 0 6px 14px rgba(0, 0, 0, 0.1);
+        font-size: 16px;
     }
 
     th, td {
         padding: 12px 15px;
-        text-align: center;
+        text-align: left;
         border-bottom: 1px solid #ddd;
-        font-size: 16px;
     }
 
     th {
@@ -78,36 +96,47 @@
         background-color: #f1f1f1;
     }
 
+    th:first-child, td:first-child {
+        width: 25%;
+    }
+
+    th:nth-child(2), td:nth-child(2) {
+        width: 20%;
+    }
+
+    th:last-child, td:last-child {
+        width: 55%;
+    }
+
     footer {
-    background: #1e3a5f;
-    color: white;
-    text-align: center;
-    padding: 10px 0;
-    font-size: 14px;
+        background: #1e3a5f;
+        color: white;
+        text-align: center;
+        padding: 10px 0;
+        font-size: 14px;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
+    }
 
-    position: fixed;    /* Fixes footer at bottom */
-    bottom: 0;          /* Bottom of viewport */
-    left: 0;            /* Full width */
-    width: 100%;
-    z-index: 1000;      /* Stays on top */
-}
+    .logout-btn {
+        position: absolute;
+        right: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: #ff4b5c;
+        color: white;
+        text-decoration: none;
+        padding: 8px 16px;
+        font-size: 14px;
+        border-radius: 5px;
+    }
 
-      .logout-btn {
-    position: absolute;
-    right: 20px;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: #ff4b5c;
-    color: white;
-    text-decoration: none;
-    padding: 8px 16px;
-    font-size: 14px;
-    border-radius: 5px;
-}
-
-.logout-btn:hover {
-    background-color: #e04352;
-}
+    .logout-btn:hover {
+        background-color: #e04352;
+    }
 </style>
 </head>
 <body>
@@ -117,66 +146,67 @@
     <a href="py4.html" class="logout-btn">Logout</a>
 </header>
 
-
 <nav> 
     <a href="ht1.html">Home</a>
     <a href="example1.html">Room Booking</a> 
-  <a href="image1.html">Mess Timings</a>
-   <a href="img2.html">Mess Menu</a> 
-   <a href="img1.html">Laundry Timings</a>
+    <a href="image1.html">Mess Timings</a>
+    <a href="img2.html">Mess Menu</a> 
+    <a href="img1.html">Laundry Timings</a>
     <a href="gym.html">Gym Timings</a> 
-     <a href="compl.html">Complaint Box</a>
-     <a href="contact.html">Contact</a>
- </nav>
+    <a href="compl.html">Complaint Box</a>
+    <a href="contact.html">Contact</a>
+</nav>
 
-<h2>Daily Temple Schedule</h2>
+<div class="content-container">
+    <h2>Daily Temple Schedule</h2>
 
-<table>
-  <thead>
-    <tr>
-      <th>Ritual</th>
-      <th>Time</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Temple Opens</td>
-      <td>5:30 AM</td>
-      <td>Temple opens for devotees</td>
-    </tr>
-    <tr>
-      <td>Morning Abhisheka</td>
-      <td>6:00 AM - 6:30 AM</td>
-      <td>Holy bath of the deity with water, milk, and honey</td>
-    </tr>
-    <tr>
-      <td>Morning Aarti</td>
-      <td>7:00 AM</td>
-      <td>Devotional prayers with lamps</td>
-    </tr>
-    <tr>
-      <td>Noon Abhisheka</td>
-      <td>12:00 PM - 12:30 PM</td>
-      <td>Midday ritual bath and offerings</td>
-    </tr>
-    <tr>
-      <td>Evening Aarti</td>
-      <td>5:30 PM</td>
-      <td>Evening prayers and lamp lighting</td>
-    </tr>
-    <tr>
-      <td>Special Pooja</td>
-      <td>7:00 PM</td>
-      <td>Offerings of fruits and flowers to the deity</td>
-    </tr>
-    <tr>
-      <td>Temple Closes</td>
-      <td>8:00 PM</td>
-      <td>Temple closes for the day</td>
-    </tr>
-  </tbody>
-</table>
+    <table>
+      <thead>
+        <tr>
+          <th>Ritual</th>
+          <th>Time</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Temple Opens</td>
+          <td>5:30 AM</td>
+          <td>Temple opens for devotees</td>
+        </tr>
+        <tr>
+          <td>Morning Abhisheka</td>
+          <td>6:00 AM - 6:30 AM</td>
+          <td>Holy bath of the deity with water, milk, and honey</td>
+        </tr>
+        <tr>
+          <td>Morning Aarti</td>
+          <td>7:00 AM</td>
+          <td>Devotional prayers with lamps</td>
+        </tr>
+        <tr>
+          <td>Noon Abhisheka</td>
+          <td>12:00 PM - 12:30 PM</td>
+          <td>Midday ritual bath and offerings</td>
+        </tr>
+        <tr>
+          <td>Evening Aarti</td>
+          <td>5:30 PM</td>
+          <td>Evening prayers and lamp lighting</td>
+        </tr>
+        <tr>
+          <td>Special Pooja</td>
+          <td>7:00 PM</td>
+          <td>Offerings of fruits and flowers to the deity</td>
+        </tr>
+        <tr>
+          <td>Temple Closes</td>
+          <td>8:00 PM</td>
+          <td>Temple closes for the day</td>
+        </tr>
+      </tbody>
+    </table>
+</div>
 
 <footer>&copy; 2025 Vishnu Temple | Devotion & Peace</footer>
 

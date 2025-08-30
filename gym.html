@@ -11,6 +11,10 @@
         margin: 0;
         padding: 0;
         text-align: center;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
     header {
@@ -20,10 +24,13 @@
         font-size: 22px;
         font-weight: bold;
         text-transform: uppercase;
+        width: 100%;
+        text-align: center;
     }
 
     nav {
         margin: 15px 0;
+        text-align: center;
     }
 
     nav a {
@@ -39,27 +46,38 @@
         text-decoration: underline;
     }
 
+    .content-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        width: 100%;
+        padding-top: 40px; /* Pushes content slightly below header */
+        flex: 1;
+    }
+
     h2 {
         color: #1e3a5f;
-        margin: 20px 0;
+        margin-bottom: 20px;
+        font-size: 28px;
     }
 
     table {
         width: 85%;
         max-width: 600px;
-        margin: 0 auto 20px auto;
         border-collapse: collapse;
         background: white;
         border-radius: 10px;
         overflow: hidden;
         box-shadow: 0 6px 14px rgba(0, 0, 0, 0.1);
+        font-size: 16px;
     }
 
     th, td {
         padding: 12px 15px;
         text-align: center;
         border-bottom: 1px solid #ddd;
-        font-size: 16px;
+        white-space: nowrap;
     }
 
     th {
@@ -80,9 +98,14 @@
     footer {
         background: #1e3a5f;
         color: white;
+        text-align: center;
         padding: 10px 0;
         font-size: 14px;
-        margin-top: 20px;
+        position: fixed;    
+        bottom: 0;         
+        left: 0;           
+        width: 100%;
+        z-index: 1000;     
     }
 </style>
 </head>
@@ -94,37 +117,39 @@
   <a href="ht1.html">Home</a>
   <a href="example1.html">Room Booking</a> 
   <a href="image1.html">Mess Timings</a>
-   <a href="img2.html">Mess Menu</a> 
-   <a href="img1.html">Laundry Timings</a>
-    <a href="templetimings.html">Temple Timings</a>
-     <a href="compl.html">Complaint Box</a>
-     <a href="contact.html">Contact</a>
- </nav>
+  <a href="img2.html">Mess Menu</a> 
+  <a href="img1.html">Laundry Timings</a>
+  <a href="templetimings.html">Temple Timings</a>
+  <a href="compl.html">Complaint Box</a>
+  <a href="contact.html">Contact</a>
+</nav>
 
-<h2>Gym Timings</h2>
+<div class="content-container">
+    <h2>Gym Timings</h2>
 
-<table>
-  <thead>
-    <tr>
-      <th>Time Slot</th>
-      <th>Timings</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Morning</td>
-      <td>6:00 AM - 9:00 AM</td>
-    </tr>
-    <tr>
-      <td>Midday</td>
-      <td>11:00 AM - 1:00 PM</td>
-    </tr>
-    <tr>
-      <td>Evening</td>
-      <td>4:00 PM - 9:00 PM</td>
-    </tr>
-  </tbody>
-</table>
+    <table>
+      <thead>
+        <tr>
+          <th>Time Slot</th>
+          <th>Timings</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Morning</td>
+          <td>6:00 AM - 9:00 AM</td>
+        </tr>
+        <tr>
+          <td>Midday</td>
+          <td>11:00 AM - 1:00 PM</td>
+        </tr>
+        <tr>
+          <td>Evening</td>
+          <td>4:00 PM - 9:00 PM</td>
+        </tr>
+      </tbody>
+    </table>
+</div>
 
 <footer>&copy; 2024 DormEase | Stay Fit, Stay Healthy</footer>
 

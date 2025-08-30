@@ -11,6 +11,10 @@
         margin: 0;
         padding: 0;
         text-align: center;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
     header {
@@ -20,11 +24,14 @@
         font-size: 22px;
         font-weight: bold;
         text-transform: uppercase;
+        width: 100%;
         position: relative;
+        text-align: center;
     }
 
     nav {
         margin: 15px 0;
+        text-align: center;
     }
 
     nav a {
@@ -40,27 +47,39 @@
         text-decoration: underline;
     }
 
+    .content-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        width: 100%;
+        padding-top: 40px; /* pushes content slightly below header */
+        flex: 1;
+    }
+
     h2 {
         color: #1e3a5f;
-        margin: 20px 0;
+        margin-bottom: 20px;
+        font-size: 28px;
+        text-align: center;
     }
 
     table {
         width: 85%;
-        max-width: 700px;
-        margin: 0 auto 20px auto;
+        max-width: 900px;
         border-collapse: collapse;
         background: white;
         border-radius: 10px;
         overflow: hidden;
         box-shadow: 0 6px 14px rgba(0, 0, 0, 0.1);
+        font-size: 16px;
     }
 
     th, td {
         padding: 12px 15px;
         text-align: center;
         border-bottom: 1px solid #ddd;
-        font-size: 16px;
+        white-space: nowrap;
     }
 
     th {
@@ -79,35 +98,34 @@
     }
 
     footer {
-    background: #1e3a5f;
-    color: white;
-    text-align: center;
-    padding: 10px 0;
-    font-size: 14px;
-
-    position: fixed;    /* Fixes footer at bottom */
-    bottom: 0;          /* Bottom of viewport */
-    left: 0;            /* Full width */
-    width: 100%;
-    z-index: 1000;      /* Stays on top */
-}
+        background: #1e3a5f;
+        color: white;
+        text-align: center;
+        padding: 10px 0;
+        font-size: 14px;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
+    }
 
     .logout-btn {
-    position: absolute;
-    right: 20px;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: #ff4b5c;
-    color: white;
-    text-decoration: none;
-    padding: 8px 16px;
-    font-size: 14px;
-    border-radius: 5px;
-}
+        position: absolute;
+        right: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: #ff4b5c;
+        color: white;
+        text-decoration: none;
+        padding: 8px 16px;
+        font-size: 14px;
+        border-radius: 5px;
+    }
 
-.logout-btn:hover {
-    background-color: #e04352;
-}
+    .logout-btn:hover {
+        background-color: #e04352;
+    }
 </style>
 </head>
 <body>
@@ -128,62 +146,64 @@
     <a href="contact.html">Contact</a>
 </nav>
 
-<h2>Mess Menu</h2>
+<div class="content-container">
+    <h2>Mess Menu</h2>
 
-<table>
-  <thead>
-    <tr>
-      <th>Day</th>
-      <th>Breakfast</th>
-      <th>Lunch</th>
-      <th>Dinner</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Monday</td>
-      <td>Idli & Sambar</td>
-      <td>Rice, Dal, Veg Curry</td>
-      <td>Chapati & Paneer Curry</td>
-    </tr>
-    <tr>
-      <td>Tuesday</td>
-      <td>Dosa & Chutney</td>
-      <td>Rice, Rasam, Veg Fry</td>
-      <td>Chicken Curry & Rice</td>
-    </tr>
-    <tr>
-      <td>Wednesday</td>
-      <td>Poha & Upma</td>
-      <td>Rice, Dal, Veg Curry</td>
-      <td>Chapati & Egg Curry</td>
-    </tr>
-    <tr>
-      <td>Thursday</td>
-      <td>Poori & Curry</td>
-      <td>Rice, Sambar, Veg Curry</td>
-      <td>Fish Curry & Rice</td>
-    </tr>
-    <tr>
-      <td>Friday</td>
-      <td>Idli & Chutney</td>
-      <td>Rice, Dal, Fry</td>
-      <td>Paneer Curry & Chapati</td>
-    </tr>
-    <tr>
-      <td>Saturday</td>
-      <td>Masala Dosa</td>
-      <td>Biryani & Raita</td>
-      <td>Dal Tadka & Rice</td>
-    </tr>
-    <tr>
-      <td>Sunday</td>
-      <td>Pancakes & Honey</td>
-      <td>Rice, Sambar, Veg Curry</td>
-      <td>Chicken Fry & Chapati</td>
-    </tr>
-  </tbody>
-</table>
+    <table>
+      <thead>
+        <tr>
+          <th>Day</th>
+          <th>Breakfast</th>
+          <th>Lunch</th>
+          <th>Dinner</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Monday</td>
+          <td>Idli & Sambar</td>
+          <td>Rice, Dal, Veg Curry</td>
+          <td>Chapati & Paneer Curry</td>
+        </tr>
+        <tr>
+          <td>Tuesday</td>
+          <td>Dosa & Chutney</td>
+          <td>Rice, Rasam, Veg Fry</td>
+          <td>Chicken Curry & Rice</td>
+        </tr>
+        <tr>
+          <td>Wednesday</td>
+          <td>Poha & Upma</td>
+          <td>Rice, Dal, Veg Curry</td>
+          <td>Chapati & Egg Curry</td>
+        </tr>
+        <tr>
+          <td>Thursday</td>
+          <td>Poori & Curry</td>
+          <td>Rice, Sambar, Veg Curry</td>
+          <td>Fish Curry & Rice</td>
+        </tr>
+        <tr>
+          <td>Friday</td>
+          <td>Idli & Chutney</td>
+          <td>Rice, Dal, Fry</td>
+          <td>Paneer Curry & Chapati</td>
+        </tr>
+        <tr>
+          <td>Saturday</td>
+          <td>Masala Dosa</td>
+          <td>Biryani & Raita</td>
+          <td>Dal Tadka & Rice</td>
+        </tr>
+        <tr>
+          <td>Sunday</td>
+          <td>Pancakes & Honey</td>
+          <td>Rice, Sambar, Veg Curry</td>
+          <td>Chicken Fry & Chapati</td>
+        </tr>
+      </tbody>
+    </table>
+</div>
 
 <footer>&copy; 2024 DormEase | Hostel Mess Service</footer>
 
